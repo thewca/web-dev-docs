@@ -1,9 +1,8 @@
 ---
 title: Translating the Website
 layout: default
-parent: Wiki Imports
+parent: Guides
 ---
-
 
 # TODO: add a note about how the website changes constantly, and translating the website is not a one time task, it's an ongoing commitment.
 

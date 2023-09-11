@@ -1,8 +1,10 @@
 ---
-title: Caching and DB Optimizations
+title: Infrastructure
+parent: Knowledge Base
 layout: default
-parent: Wiki Imports
 ---
+
+# Caching and Database Optimizations
 
 This is a list of things we are currently caching or using the Read replica for instead of using the primary database:
 

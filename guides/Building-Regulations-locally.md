@@ -1,7 +1,7 @@
 ---
 title: Building Regulations Locally
 layout: default
-parent: Wiki Imports
+parent: Guides
 ---
 
 This page aims to guide you through the process of building the WCA Regulations and Guidelines, which is something that you may want to do when you first clone the website repository.
