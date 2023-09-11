@@ -1,8 +1,10 @@
-title: WCA Web Development Docs
+title: WCA Web Dev
 description: A collection of documentation and guides for development of the WCA's web ecosystem.
 theme: just-the-docs
 
 url: https://thewca.github.io
+favicon_ico: /assets/images/favicon.ico
+color_scheme: dark
 
 aux_links:
   WCA Main Repo: https://github.com/thewca/worldcubeassociation.org

@@ -1,35 +1,67 @@
 ---
-title: Home
+title: Overview
 layout: home
+nav_order: 1
 ---
 
-This is a *bare-minimum* template to create a Jekyll site that uses the [Just the Docs] theme. You can easily set the created site to be published on [GitHub Pages] – the [README] file explains how to do that, along with other details.
+## Quick Links
 
-If [Jekyll] is installed on your computer, you can also build and preview the created site *locally*. This lets you test changes before committing them, and avoids waiting for GitHub Pages.[^1] And you will be able to deploy your local build to a different platform than GitHub Pages.
+- Development Quickstart
+- Beginner's Guide to Contributing
+- Current Development Vision
 
-More specifically, the created site:
+## Contributing to the Docs
 
-- uses a gem-based approach, i.e. uses a `Gemfile` and loads the `just-the-docs` gem
-- uses the [GitHub Pages / Actions workflow] to build and publish the site on GitHub Pages
+Our documentation is [open-source](https://github.com/thewca/web-dev-docs)! You can submit corrections or add documentation - but open an issue to discuss larger contributions first.
 
-Other than that, you're free to customize sites that you create with this template, however you like. You can easily change the versions of `just-the-docs` and Jekyll it uses, as well as adding further plugins.
+## About
 
-[Browse our documentation][Just the Docs] to learn more about how to use this theme.
+The World Cube Association ("WCA") governs twisty puzzle (think: Rubik's Cube) competitions around the world. There are a number of software resources which enable it to do this.
 
-To get started with creating a site, simply:
+The code for these websites is open-source and any contributors are welcome to submit PR's. The WCA Software Team ("WST") is responsible for maintaining and driving development on WCA's software. See below for a list of software being developed.
 
-1. click "[use this template]" to create a GitHub repository
-2. go to Settings > Pages > Build and deployment > Source, and select GitHub Actions
+## Contacting WST
 
-If you want to maintain your docs in the `docs` directory of an existing project repo, see [Hosting your docs from an existing project repo](https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md#hosting-your-docs-from-an-existing-project-repo) in the template README.
+Remember, our repos are open-source - you don't have to be a member of WST to contribute!
 
-----
+* **Open an issue**: Create a link in the relevant repo - "WCA Software Resources" below contains links to all repos.
+* **General enquiry**: Submit an email to WST via the WCA's [contact form](https://www.worldcubeassociation.org/contact/website)
+* **Joining WST**: Currently (2023-09-10) WST is not accepting new members. We aim to onboard more volunteers by early 2024.
 
-[^1]: [It can take up to 10 minutes for changes to your site to publish after you push the changes to GitHub](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#creating-your-site).
+## WCA Software Resources
 
-[Just the Docs]: https://just-the-docs.github.io/just-the-docs/
-[GitHub Pages]: https://docs.github.com/en/pages
-[README]: https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md
-[Jekyll]: https://jekyllrb.com
-[GitHub Pages / Actions workflow]: https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/
-[use this template]: https://github.com/just-the-docs/just-the-docs-template/generate
+### Websites
+
+#### WorldCubeAssociation (repo)
+- The main website for the WCA - commonly referred to as the "Monolith".
+- Primarily uses Ruby on Rails, transitioning to a React-based frontend.
+
+#### WCA Live (repo):
+- A website for capturing and displaying live results at WCA-sanctioned competitions.
+- Primarily uses Elixir and React, transitioning to a Rails-based backend with Elixir only used for serving results data to clients.
+
+#### WCA Statistics (repo):
+- Provides various interesting statistics outside the scope of the main website. Also provides an interface for SQL queries to be made against a "developer export" of the database.
+- Python backend, Javascript frontend.
+
+#### Scrambles matcher
+- TODO
+
+
+### Other Software
+
+#### TNoodle
+- TODO
+
+
+# TODO:
+- Add a "Repo Context" page with:
+    - development vision
+    - why rails? 
+
+
+
+---
+
+[WCA](https://www.worldcubeassociation.org/abouthttps://www.worldcubeassociation.org/about)
+[WST](https://www.worldcubeassociation.org/teams-committees#WST)
