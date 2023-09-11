@@ -30,6 +30,10 @@ If changes aren't showing up, please:
 
 ## FAQ
 
+### Can I make draft pages?
+
+You can! Just prefix the page name with a `_`, and Jekyll will ignore it. Remove the `_` when it is ready to publish.
+
 ### How do you edit the left navigation bar? 
 
 If you're familiar with Jekyll, we do not use Collections to organize the content. JustTheDocs provides navigation tools which we make use of. 

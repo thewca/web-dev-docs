@@ -1,0 +1,1 @@
+This has been renamed to the [WCA Competition Interchange Format](https://github.com/thewca/worldcubeassociation.org/wiki/WCIF).

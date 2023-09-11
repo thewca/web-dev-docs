@@ -12,3 +12,15 @@ aux_links:
 nav_external_links:
   - title: API 
     url: https://wca-rest-api.robiningelbrecht.be/
+
+
+callouts:
+  warning:
+    title: Warning
+    color: red
+  info:
+    title: Info
+    color: blue
+  help:
+    title: Help Wanted
+    color: yellow

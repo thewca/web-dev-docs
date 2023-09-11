@@ -6,8 +6,8 @@ nav_order: 1
 
 ## Quick Links
 
-- Development Quickstart
-- Beginner's Guide to Contributing
+- Quickstart
+- Detailed Guide to Contributing
 - Current Development Vision
 
 ## Contributing to the Docs
