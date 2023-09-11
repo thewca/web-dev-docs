@@ -8,3 +8,7 @@ color_scheme: dark
 
 aux_links:
   WCA Main Repo: https://github.com/thewca/worldcubeassociation.org
+
+nav_external_links:
+  - title: API 
+    url: https://wca-rest-api.robiningelbrecht.be/

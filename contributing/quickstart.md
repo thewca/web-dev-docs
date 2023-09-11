@@ -1,5 +1,5 @@
 ---
-title: Development Quickstart
+title: Quickstart
 parent: Contributing
 layout: default
 nav_order: 1
