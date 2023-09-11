@@ -14,3 +14,7 @@ nav_order: 5
 - [ ] finish off and publish draft pages
 
 ## IDEAS / THOUGHTS
+
+- add development tips and tricks
+    - byebug
+    - rails console

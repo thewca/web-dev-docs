@@ -6,9 +6,7 @@ nav_order: 1
 
 ## Quick Links
 
-- Quickstart
-- Detailed Guide to Contributing
-- Current Development Vision
+- [Quickstart](/contributing/quickstart)
 
 ## Contributing to the Docs
 
@@ -16,9 +14,9 @@ Our documentation is [open-source](https://github.com/thewca/web-dev-docs)! You 
 
 ## About
 
-The World Cube Association ("WCA") governs twisty puzzle (think: Rubik's Cube) competitions around the world. There are a number of software resources which enable it to do this.
+The [World Cube Association](https://www.worldcubeassociation.org/) ("WCA") governs twisty puzzle (think: Rubik's Cube) competitions around the world. There are a number of software resources which enable it to do this.
 
-The code for these websites is open-source and any contributors are welcome to submit PR's. The WCA Software Team ("WST") is responsible for maintaining and driving development on WCA's software. See below for a list of software being developed.
+The code for these websites is open-source and any contributors are welcome to submit PR's. The [WCA Software Team](https://www.worldcubeassociation.org/teams-committees#WST) ("WST") is responsible for maintaining and driving development on WCA's software. See below for a list of software being developed.
 
 ## Contacting WST
 
@@ -32,7 +30,7 @@ Remember, our repos are open-source - you don't have to be a member of WST to co
 
 ### Websites
 
-#### WorldCubeAssociation (repo)
+#### [WorldCubeAssociation](https://www.worldcubeassociation.org/) ([repo]())
 - The main website for the WCA - commonly referred to as the "Monolith".
 - Primarily uses Ruby on Rails, transitioning to a React-based frontend.
 
