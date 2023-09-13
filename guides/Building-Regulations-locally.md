@@ -6,13 +6,17 @@ parent: Guides
 
 This page aims to guide you through the process of building the WCA Regulations and Guidelines, which is something that you may want to do when you first clone the website repository.
 
-# Requirements
+## Requirements
+
+{: .warning}
+> Chef may be deprecated soon - rather rely on the steps described here.
+
 The requirements to build the Regulations locally are pretty small, and can be found in the chef recipes for the [regulations](https://github.com/thewca/worldcubeassociation.org/blob/a604f5a600dc52943101a00e7a3d2e24c086eecd/chef/site-cookbooks/wca/recipes/regulations.rb), but here is a commented step-by-step setup:
 
 The following system packages are needed:
 `git`, `python-pip`, `fonts-unfonts-core`, `fonts-wqy-microhei`, `fonts-ipafont`, `lmodern`
 
-I'm fairly confident the first two are likely to be already installed on your system, and the last four are needed to build pdfs for the CJK translations of the Regulations.
+The first two are likely to be already installed on your system, and the last four are needed to build pdfs for the CJK translations of the Regulations.
 Please note that the name may differ a bit depending on your Linux distribution.
 
 The html/pdf/json generation is done by the [WCA Regulations Compiler](https://github.com/thewca/wca-regulations-compiler), which can be installed through `pip`:

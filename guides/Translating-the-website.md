@@ -170,7 +170,7 @@ Go on the [website](https://internationalize.jonatanklosko.com/) of the applicat
 
 When signed in, you should be able to create a new translation by clicking on "New translation":
 
-![new translation view](http://i.imgur.com/t1d70sK.png)
+![new translation view](/assets/images/new_translation_view.png)
 
 Here are the descriptions of the field:
 
@@ -185,7 +185,7 @@ Click create once, and you should see your newly created translation under "My T
 
 You should now be on the translate view:
 
-![translate view](http://i.imgur.com/91O6zvO.png)
+![translate view](/assets/images/translate_view.png)
 
 Some description:
 
@@ -202,13 +202,13 @@ Basically you can enter your translation and press "enter": it will have the sam
 
 If you want to change the translation for a key you already translated you can use the "Browse" view:
 
-![browse view](http://i.imgur.com/cl2Q5gk.png)
+![browse view](/assets/images/browse_view.png)
 
 For example the key hierarchy on the previous screen is "fr > countries > XA", so you can click on "countries" and find the "XA" key.
 
 When you're done translating (or at any time), you can download the resulting file through the menu:
 
-![menu view](http://i.imgur.com/6gOslqz.png)
+![menu view](/assets/images/menu_view.png)
 
 Then you just have to send it (with your language name in your language) to the software team and voilà!
 
@@ -227,7 +227,7 @@ Before actually doing the sync, you will be prompted with a summary of the chang
 Conflicts happen when an existing key has been modified in the English locale, after you translated it.
 For example the event names changed recently, and this is what I had when synchronizing the French locale:
 
-![sync view](http://i.imgur.com/f4XK9Tx.png)
+![sync view](/assets/images/sync_view.png)
 
 If any key has been added, you need to go back to the translation process!
 
@@ -246,7 +246,7 @@ There is one specificity that is worth knowing: the key `zero` is always require
 In some case it's nicer to be able to override the default value with a nicer "zero" case, eg use "no objects" instead of "0 objects". This is an optional key in the website framework, however we made it required in the app, because it was way easier for us.
 This will lead to some confusing cases:
 
-![plural view](http://i.imgur.com/3YdZyJY.png)
+![plural view](/assets/images/plural_view.png)
 
 In this particular case, it makes absolutely no sense to provide a `zero` key, since the message is never displayed if there is no registration.
 In such cases you can just copy the value of the `other` key.

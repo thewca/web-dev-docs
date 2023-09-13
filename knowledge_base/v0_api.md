@@ -4,25 +4,28 @@ parent: Knowledge Base
 layout: default
 ---
 
-# v0 API
+{: .warning}
+> If you want to read/query WCA website data, see [WCA Data Overview](/knowledge_base/wca_data_overview). The v0 API is only for experienced developers looking to use the website for OAuth, or looking to write data to the website via WCIF. WST will not provide support for except for Major Championship software.
 
-If you only need to read data from the WCA website, we recommend the excellent [unofficial API](https://wca-rest-api.robiningelbrecht.be/) created by a member of the community.  
+## Disclaimers and Context
+If you are looking to write data, we *do* have a v0 API you can interact with. It is not officially supported, and as such there guarantee of consistency or availability. It provides the following capabilities:
+- read/write data to the website
+- allow uses to OAuth with their WCA accounts
 
-If you are looking to write data, we *do* have a v0 API you can interact with, and we would love for you to battle test it and give us feedback! Please bear in mind that we are a small team, and we haven't taken the time to document our API. We plan to do so with v1 of the API, but we do not have a timeline for when we will release a v1 of our API. For now, if you want to figure out what our API does, we recommend looking at the source code (see [here](https://github.com/thewca/worldcubeassociation.org/blob/master/WcaOnRails/config/routes.rb), search for "namespace :api" at the bottom) or the emails content . If you have further questions, feel free to file an issue here on GitHub, or email the WCA Software Team at <mailto:software@worldcubeassociation.org>.
+A v1 API is on our pipeline, but should only be expected by Q2 of 2024 at the earliest.
 
-If you are interested in API design and want to help us with developing v1 of our API, please reach out to us over email and we'll figure out some tasks for you to take on =)
+# Writing to the API
 
-We do have some documentation on our OAuth API and the official WCA competition data format standard:
+For now, if you want to figure out what our API does, we recommend looking at the source code (see [here](https://github.com/thewca/worldcubeassociation.org/blob/master/WcaOnRails/config/routes.rb), search for "namespace :api" at the bottom) or the emails content.
 
-* See our [[OAuth documentation notes|OAuth documentation notes]]
-* Read about the [[WCA Competition Interchange Format (WCIF)|WCIF]]
+If you want to exchange data with the WCA website, you should understand [WCA Competition Interchange Format (WCIF)](https://drive.google.com/drive/folders/13h6RCmD-wnzTmKOFMJFgvY3M4GjZTuI4)
 
 Here we have a collection of replies to different emails about the API
 * List of available endpoints [here](https://github.com/thewca/worldcubeassociation.org/blob/805d6ddbff5d55bd8ec67f8477efc579b8212de5/WcaOnRails/config/routes.rb#L176-L200).
 * The French association has some integration you can use as an example, like [upcoming competition in France](https://github.com/speedcubingfrance/speedcubingfrance.org/blob/f77c134d50b7fac4a6bcb32cae40f95494054a5f/app/controllers/competitions_controller.rb#L30).
 * WCA Data Protection Committee ([WDPC](mailto:dataprotection@worldcubeassociation.org)) might be interested in what you are building and we are currently trying to figure out the best way to handle third-party usage and our regulations, so, please, email them.
 
-### (A little) More details on the endpoints
+## (A little) More details on the endpoints
 * [/competitions](https://www.worldcubeassociation.org/api/v0/competitions) lists competitions, paginated 25 per page, you can use _page_ query parameter to get more, prev/next links should also be in the response headers. Additionally you can use the _q_ query parameter to search competitions by a phrase.
 * [/competitions/:id/competitors](https://www.worldcubeassociation.org/api/v0/competitions/NewHopeOpenWinter2019/competitors) lists competitors for a competition given it has results uploaded, those are the people who actually competed
 * [/competitions/:id/results](https://www.worldcubeassociation.org/api/v0/competitions/NewHopeOpenWinter2019/results) lists competition results, each one corresponds to competitor times for some event&round
@@ -33,7 +36,7 @@ Here we have a collection of replies to different emails about the API
 
 Concerning the people list returning only 25 entries, see the first of the points above, the same applies for [/persons](https://www.worldcubeassociation.org/api/v0/persons).
 
-# OAuth Notes
+# Using the API for OAuth
 
 This "documentation" assumes a lot of knowledge. If you have questions about how WCA OAuth works, please contact the WST directly at <software@worldcubeassociation.org>. We'd love help turning this wiki page into a useful document on how to set up WCA OAuth on third party websites. In the mean time, we have the documentation below. You can also see some example code at in [thewca/wca-oauth](https://github.com/thewca/wca-oauth) repository.
 
@@ -65,15 +68,15 @@ NOTE: This is just a writeup of the very simple "can authenticate with grant_typ
 
 2) Then, click the Authorize button ([see test code](https://github.com/cubing/worldcubeassociation.org/blob/194bf02f53b259074077f81bbdf382416e439453/WcaOnRails/spec/requests/oauth/oauth_spec.rb#L22-L27)) for that new application:
 
-![Authorize button](http://i.imgur.com/p6r5peC.png)
+![Authorize button](/assets/images/authorize_button.png)
 
 3) That should should take you to a url like `https://www.worldcubeassociation.org/oauth/authorize?client_id=...&redirect_uri=...&response_type=code&scope=...`, where you can approve the application ([see test code](https://github.com/cubing/worldcubeassociation.org/blob/194bf02f53b259074077f81bbdf382416e439453/WcaOnRails/spec/requests/oauth/oauth_spec.rb#L29-L35)):
 
-![Authorize popup](http://i.imgur.com/DskjdYp.png)
+![Authorize popup](/assets/images/auth_popup.png)
 
 4) After you click the green button, you'll be redirected to your redirect url. If you set your redirect url to `urn:ietf:wg:oauth:2.0:oob`, you'll be redirected back to the WCA website, and it will be very easy to see your authorization code ([see test code](https://github.com/thewca/worldcubeassociation.org/blob/194bf02f53b259074077f81bbdf382416e439453/WcaOnRails/spec/requests/oauth/oauth_spec.rb#L37-L38)):
 
-![Success redirect URL](http://i.imgur.com/nGGQON7.png)
+![Success redirect URL](/assets/images/success_redirect.png)
 
 5) Next, you must convert the authorization code you got in step 4 into an access token ([see test code](https://github.com/thewca/worldcubeassociation.org/blob/194bf02f53b259074077f81bbdf382416e439453/WcaOnRails/spec/requests/oauth/oauth_spec.rb#L40-L47))
 

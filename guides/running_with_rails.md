@@ -7,7 +7,9 @@ parent: Guides
 {: .help}
 > After Monolith Improvements, we should consider whether to deprecate this guide. If we keep it, this page needs some formatting cleanup. 
 
-### Run directly with Ruby (lightweight, but it involves manual installation which happens at your own risk and we won't be able to assist with detailed troubleshooting)
+This guide describes how to run the website using Rails's `rails server` command instead of [Docker](/contributing/quickstart). Note that Docker is the recommended method - only use this guide if you have a specific reason for using it.
+
+## Run the Server with Rails
 
 - Ensure you have the correct [Ruby version](./.ruby-version) installed. We recommend using a Ruby version manager like [rvm](https://rvm.io/rvm/install) or [rbenv](https://github.com/rbenv/rbenv). They should both read the `.ruby-version` file to use the correct version (`rvm current` or `rbenv version` to confirm).
 - Ensure [Bundler 2](https://bundler.io/v2.0/guides/bundler_2_upgrade.html) is installed

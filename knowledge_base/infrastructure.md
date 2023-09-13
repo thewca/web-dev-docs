@@ -4,11 +4,14 @@ parent: Knowledge Base
 layout: default
 ---
 
+{: .help}
+> There is much more information about our infrastructure that still needs to be added
+
 # Caching and Database Optimizations
 
 This is a list of things we are currently caching or using the Read replica for instead of using the primary database:
 
-# HTML Request Caches
+## HTML Request Caches
 These cache full or partial HTML requests or json objects using the built in Rails Cache
 
 ## API
