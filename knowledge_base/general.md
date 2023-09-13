@@ -4,6 +4,12 @@ layout: default
 parent: Knowledge Base
 ---
 
+# Translations
+
+i18n is used for translation/internationalization. WST maintains the English translation, and volunteer translators are responsible for contributing and maintaining [other translations](/guides/translating_the_website).
+
+WST must remove unused keys in the English translation, `Internationalize` automatically cleans up missing keys in other translations. 
+
 # Payments with Stripe
 
 {: .warning}
@@ -36,3 +42,9 @@ If you look at our [database schema](https://github.com/thewca/worldcubeassociat
 
 
 *With the notable exception of some "dummy accounts" we created to keep profile pictures working. These dummy accounts have been a continuous source of pain, and we will probably get rid of them someday.
+
+# Resources
+
+A scattered collection of resources on web design, Rails and React.
+
+- [Cache is King](https://www.youtube.com/watch?v=yN1rGZbwn9k) - great talk on using Ruby/Rails to reduce database load 

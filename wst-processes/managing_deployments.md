@@ -4,6 +4,9 @@ parent: WST Processes
 layout: default
 ---
 
+{: .warning}
+> Large portions of this are based on the old Github Wiki, much of which may now be out of date.
+
 # SSH to production
 
 This process will work for any of our instances running on EC2 servers.

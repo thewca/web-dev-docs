@@ -25,14 +25,23 @@ This is an essential step of contributing to the WCA website, as you'll want to 
 6. If you're using Visual Studio Code to develop, you can [attach it to the Docker container](https://code.visualstudio.com/docs/remote/containers) so that your extensions can take advantage of the Ruby environment and so the terminal runs from inside the container
 
 ## 3. Set up the database
-
 TODO
+
+## 4. Run migrations (if necesary)
 
 # (2) Find an issue you'd like to contribute to
 
 You can look at our [good first issues](), find one that interests you, and add a comment saying that you'd like to work on the issue. 
 
-# (3) Create a new branch
+# (3) Create a new branch, and start writing your changes.
+
+## Create a new branch
+
+## Start the Docker container
+
+## Start writing your code
+
+With the Docker container running, the website will automatically update with any changes you make to the code.
 
 # (4) Commit and push your changes
 

@@ -4,6 +4,7 @@ parent: WST Processes
 layout: default
 ---
 
+
 # Policy for merging code
 
 Everyone (even the software team leader =)) must send in a PR for every change they make. If the PR addresses a critical issue or [is just updating a translation](https://github.com/thewca/worldcubeassociation.org/pull/1144#issuecomment-275124727), then you can merge it up immediately, but otherwise, you should wait for someone to comment with a LGTM before merging up your own PR.

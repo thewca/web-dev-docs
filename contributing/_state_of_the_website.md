@@ -23,3 +23,12 @@ parent: Contributing
 
 # Why Rails?
 
+
+Great discussion on reddit:
+https://www.reddit.com/r/rails/comments/aho9g0/hoping_to_view_rails_magic_through_a_different/
+https://medium.com/swlh/the-ups-and-downs-of-rails-magic-5a88c7f68064
+https://rubyonrails.org/doctrine
+
+
+Once you know rails, your fluency in the code goes up MASSIVELY. But, it is a barrier to contributing. 
+

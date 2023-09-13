@@ -5,7 +5,12 @@ nav_order: 5
 ---
 
 ## TODO
-- [ ] Add "Ruby resources" section
+- [ ] Managing performance with Grafana
+- [ ] Checking error codes
+- [ ] Managing WCA Live performance
+- [ ] Add a testing section
+- [ ] Add rails courses and sytnax comparison sheets
+- [x] Add "Ruby resources" section
 - [x] Add a "DevOps" section under WST processes for deployments and related stuff
 - [ ] Read through all pages and edit
 - [ ] figure out how to add/link to images, and document that
