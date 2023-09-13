@@ -4,13 +4,16 @@ parent: Guides
 layout: default
 ---
 
-This documentation is very new, so you should feel free to suggest changes.
+{: .help}
+> The WCA Components library has recently been created - we need to add documentation explaining the use of it and how to see what components are available.
+
+{: .info}
+> This documentation is very new, so you should feel free to suggest changes.
 
 ## Preamble
 
-The website is historically purely Rails, with a lot of jquery to handle user interaction.
-With the integration of Webpack to Rails, we started migrated our javascript and css codebase to Webpack,
-but it's still very much in progress.
+The website is historically purely Rails, with a lot of jquery to handle user interaction. With the integration of Webpack to Rails, we started migrated our javascript and css codebase to Webpack, but it's still very much in progress. 
+
 This means we serve our assets from two sources: sprockets (assets located in '/assets'), and webpack (assets located in '/packs').
 
 New javascript developments should occur with webpack.
