@@ -27,6 +27,7 @@ You can track the status of the existing translations on the [translations statu
 
 | Language | Translator | GitHub Account |
 | -------- | ---------- | -------------- |
+| Catalan | Ivan Ros | @Roco033 |
 | Chinese-Simplified (zh-CN)| Baiqiang Dong, Lee Yiu Sing | @Baiqiang @PikAsriel |
 | Chinese-Traditional (zh-TW) | Rui-Jun Liu, Han Wu | @hanwu85 |
 | Croatian | Dominik Vidaković |
@@ -55,11 +56,7 @@ You can track the status of the existing translations on the [translations statu
 
 ## WIP Translations
 
-Some translations have already been started, here are the current works in progress we are aware of:
-
-| Language | Translator | GitHub Account |
-| -------- | ---------- | -------------- |
-| Catalan | Ivan Ros | @Roco033 |
+There are no translations in progress at the moment.
 
 ## General notes
 
