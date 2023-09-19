@@ -5,6 +5,7 @@ nav_order: 5
 ---
 
 ## TODO
+- [ ] Add a WCA Staff section? that has FAQ's / basic overviews of how things work for staff
 - [ ] Managing performance with Grafana
 - [ ] Checking error codes
 - [ ] Managing WCA Live performance
@@ -24,7 +25,7 @@ nav_order: 5
 
 ## IDEAS / THOUGHTS
 
-- add development tips and tricks
+- add development/debugging tips and tricks
     - byebug
     - rails console
 - Add a "Repo Context" page with:

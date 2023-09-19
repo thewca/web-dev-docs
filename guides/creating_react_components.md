@@ -162,12 +162,49 @@ Note that you may choose to provide the component with some initial data. For in
 Again you can see a detailed usage in the actual code of `PostsWidget` :)
 
 
-## Writing data to the website
+## (QUESTIONS) Writing data to the website
 
 {: .help}
 > This section of the guide needs to be completed.
 
 TODO: a similar `savable` hook is under development.
+
+### How it currently works in Rails
+
+
+### Options for doing it with React
+Do we have any implementations currently in the codebase that can serve as examples? 
+
+1. Submit via the existing Rails form infrastructure (is this possible?)
+2. Expose an API and submit data to that API (how Registration Service does it)
+
+Two possible cases: 
+1. React component is submitting the same fields as Rails form - in this case, we don't want to have to individually map each field
+2. React component is submitting different fields to Rails form - in this case, an adapter between the model and the submitted data will be necessary
+
+Concerns:
+* With Rails, we just pass it a list of approved parameters and those get automatically written to the relevant fields on the model. 
+
+## (ANSWERS) Writing data to the website
+
+### Principles: 
+- Loose coupling between frontend and backend
+    - Implication: Don't want to make use of Rails magic to ingest data
+    - Implication: Rewriting a React component means also thinking about API interaction if that doesn't already exist
+- We can implement private APIs as needed (ie, APIs that are part of our open-source code, but which aren't accessible to 3rd-party developers)
+
+### Code:
+- Useful methods for sending data from Rails to React:
+    - serializable_hash (Rails method)
+        - this generally shouldn't be touched/edited during React PR's, unless with a very good reason
+    - to_wcif (implementation of WCIF standard in our Rails code)
+    - if we need custom serializations, we'll need to  write those per-endpoint
+
+### Fetching data
+- Can't just pass `@delegates`, because it contains Ruby-serialized data - this needs to be serialized into React-readable data (ie, JSON)
+- Ideally we want to just pass the id of the object we want to fetch wherever possible
+- ActiveRequest
+
 
 ## I18n / Internationalization
 

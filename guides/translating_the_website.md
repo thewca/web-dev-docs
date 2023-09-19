@@ -267,13 +267,26 @@ Here is where you can get the additional modules' translation:
 
 Just skip this part if you don't intend to mess with i18n internal in the website.
 
-To activate a locale:
+### To activate a locale:
 - Add the locale with the language information to the available locales (in `WcaOnRails/config/locales/locales.rb`)
 - Activate the `fullCalendar`/`moment` locale in the `WcaOnRails/app/assets/javascripts/application.js` (look at the numerous examples)
 
 You can check missing translations by running `i18n-tasks missing` in the `WcaOnRails` directory.
 
 5 translations are expected to be missing (those under 'datepicker' or 'timepicker') for every language but English.
+
+### Language codes vs region codes
+
+In most cases, language code and region code will be the same. However, it is important to know that these two different types of code exist. Most places in our codebase will only reference the language code, but in some places (eg `locales.rb`) both will appear:
+
+```yml
+en: {
+      flag_id: "gb",
+      name: "English",
+    },
+```
+
+In this case, `en` is the _language_ code, while `flag_id` is _region_ code, which may have a different ISO code - as is the example with English (the language), where the Great Britain flag is used to represent it. (This is a good illustration of why using flags to represent languages is not generally not a good idea.)
 
 ### Translations status internals
 
