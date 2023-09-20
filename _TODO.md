@@ -5,6 +5,7 @@ nav_order: 5
 ---
 
 ## TODO
+- [ ] Add the WCIF specification
 - [ ] Add a WCA Staff section? that has FAQ's / basic overviews of how things work for staff
 - [ ] Managing performance with Grafana
 - [ ] Checking error codes
