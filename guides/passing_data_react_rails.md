@@ -25,9 +25,9 @@ In some cases, it isn't possible to introduce the necessary GET API endpoints ye
 To understand how React will receive data from Rails, we start by reviewing how Views are currently rendered to Users in Rails. As the below diagram demonstrates:
 - a request is routed to the Controller via `routes.rb`
 - the Controller requests data from the Model and provides it to the View
-- the View generates HTML which Rails responds to the user with
+- the View generates HTML which Rails sends to the user
 
-![](/assets/images/normal_rails_rendering.png)
+![](/assets/images/normal_rails_rendering_flow.png)
 
 When using React for the frontend, a 2-step process is used to render the data to the user.
 1. The React page is served to the user
