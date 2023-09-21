@@ -93,10 +93,17 @@ If `serializable_hash` doesn't produce data in the format you require, you shoul
 
 # Writing data to Rails
 
+{: .info}
+> Diagrams in this section are available for editing to WST members [here](https://app.diagrams.net/#G1V1mXsYcMw6cIaPJU3cA-s3pJ7psYovLD#%7B%22pageId%22%3A%22wrVvO56TNKLfE-PIFfzB%22%7D).
 
-## Option 1: API Communication
+As seen below, writing data to Rails is very similar to the best practice for reading data from Rails. Essentially, **the Rails backend exposes an API endpoint which the React frontend can make POST/PATCH calls to.**
 
-## Option 2: Serializing Rails data
+![](/assets/images/writing_data_react_rails.png)
+
+The process of finding an API endpoint to write data to is the same as the previous section:
+- Check if the endpoint already exists
+- If yes, modify it if necessary and make use of it
+- If no, create one (see "Create a new endpoint" for details)
 
 ----
 
