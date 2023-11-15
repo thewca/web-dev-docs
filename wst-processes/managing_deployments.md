@@ -7,6 +7,13 @@ layout: default
 {: .warning}
 > Large portions of this are based on the old Github Wiki, much of which may now be out of date.
 
+{: .warning}
+> ⚠️ **If you want to try out the commands/tasks described in this document (or any other) please
+use the staging server for that, not the production one. You can easily distinguish between
+these two by looking at the command line prompt (`~ @staging> ` vs `~ @production> `).**
+
+
+
 # SSH to production
 
 This process will work for any of our instances running on EC2 servers.
@@ -153,18 +160,6 @@ Running `df -h` will show 100% usage on `/`. When this happens, we'll  need to r
 
 Here you can find the most common operations necessary to keep the website running.
 
-## Staging
-
-We have another server with production-like setup, but used only for testing.
-You can establish the connection in the same way, just use the staging address instead.
-
-```shell
-ssh cubing@staging.worldcubeassociation.org
-```
-
-⚠️ **If you want to try out the commands/tasks described in this document (or any other) please
-use the staging server for that, not the production one. You can easily distinguish between
-these two by looking at the command line prompt (`~ @staging> ` vs `~ @production> `).**
 
 ## Checking the state of the app
 
@@ -333,3 +328,19 @@ There are several log files you may look into:
 
 You should go to the [developer console](https://console.developers.google.com/apis/credentials?project=wca-website&pli=1) (login with the wca.software google account which is in our credentials document), select the "WCA production key", and add the new server's IP (you should also remove the old server's IP).
 
+
+# Staging
+
+We have another server with production-like setup, but used only for testing.
+You can establish through by connecting to the staging instance listed in our EC2 instances.
+
+## Updating the Staging Database
+
+This is done using a similar process to getting the developer database for local development. 
+
+1. Connect to the staging server
+2. Make sure you're the `cubing` user: `sudo su cubing` 
+3. Switch to the WcaOnRails folder: `cd worldcubeassociation/WcaOnRails`
+4. Load the developer database: `RAILS_ENV=production bin/rake db:load:development`
+    1. NOTE: This takes a very long time (~60 minutes) to execute.
+5. Run a database migration: `RAILS_ENV=production bin/rake db:migrate`
