@@ -6,7 +6,7 @@ nav_order: 1
 ---
 
 {: .info}
-> This assumes you are an experienced developer with the necessary dependencies - refer to [Detailed Setup Guide](./detailed_setup_guide) if you need more information.
+> This assumes you are an experienced developer with the necessary dependencies - refer to [Detailed Setup Guide](./detailed_contributing_guide) if you need more information.
 
 There are 3 steps to run the WCA website locally with docker[^1]:
 
