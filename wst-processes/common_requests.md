@@ -24,3 +24,14 @@ WRT handles these requests - forward any such requests to them via email.
     2. Select the distribution with "avatars" in the "Alternate destination" and/or "Origins" columns
     3. Go to "Invalidations" -> "Create Invalidation"
     4. Create an invalidation with the URL where the avatar lives e.g /uploads/user/avatar/2019POLA01/1569217830.jpg
+
+# AWS Certificate Renewal
+
+AWS will send an email with the title "Action Required - Your certificate renewal", which specifies the domain that needs a certificate renewed - for example, http://statistics-api.worldcubeassociation.org/
+
+1. Go to Certificate Manager in AWS console
+2. "List certificates"
+3. Click on the certificate with the relevant name in the "Domain name" column
+4. Click "Create records in Route 53"
+5. Confirm with "Create records"
+
