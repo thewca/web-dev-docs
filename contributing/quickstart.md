@@ -24,16 +24,26 @@ There are two options here - a "test" database with generated data, or the produ
 ## (3) RUNNING TESTS
 Two options - running while your docker server is running, or running tests independently. 
 
+### **RUNNING WHILE SERVER IS LIVE**
+With your docker server running:
+1. Create `WcaOnRails/.env.test.local` with the following contents (this overrides `.env.test`, which is set up for testing in Github Actions, which uses a different db configuration): 
+    ```bash
+    DATABASE_HOST=127.0.0.1
+    DATABASE_PASSWORD=
+    ```
+1. Connect to the `rails` container using `docker exec -it rails bash`
+2. You'll now be in the terminal shell - run `RAILS_ENV=test rspec` 
+
+You may want to consider the following options to make the test suite run faster: 
+- Add `--fail-fast` to have the suit terminate after the first failure
+- Specify a folder/filename to limit how many tests get executed
+
+A full command using these options would look like: `RAILS_ENV=test rspec spec/features/register_for_competition_spec.rb --fail-fast`
+
 ### **RUNNING INDEPENDENTLY**
 ```
 docker-compose exec wca_on_rails bash -c "RAILS_ENV=test bin/rake db:reset && RAILS_ENV=test bin/rake assets:precompile && bin/rspec"
 ```
-
-### **RUNNING WHILE SERVER IS LIVE**
-With your docker server running:
-1. Connect to the `wca_on_rails` container using `docker exec -it {container_id} bash`
-    1. _Use `docker ps` to list containers and their id's_
-2. Run `bin/rspec` from inside the container's terminal
 
 ----
 
