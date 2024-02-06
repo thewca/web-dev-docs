@@ -35,15 +35,32 @@ With your docker server running:
 2. You'll now be in the terminal shell - run `RAILS_ENV=test rspec` 
 
 You may want to consider the following options to make the test suite run faster: 
+- Use `spring` to preload Rails with `bin/spring` - this all test runs after the first significantly faster
+- Set `SKIP_PRETEST_SETUP=true` in `.env.test.local` (you may need to create this file)
+    - This will skip database pre-population with seed data, which is used by legacy tests and is not needed if you are running an isolated set of tests which only rely on factories. WE SHOULD NOT BE WRITING ANY NEW TESTS WHICH USE THE SEED DATA! Use factories instead.
 - Add `--fail-fast` to have the suit terminate after the first failure
 - Specify a folder/filename to limit how many tests get executed
 
-A full command using these options would look like: `RAILS_ENV=test rspec spec/features/register_for_competition_spec.rb --fail-fast`
+A full command using these options would look like: `RAILS_ENV=test bin/spring rspec spec/features/register_for_competition_spec.rb --fail-fast`
 
 ### **RUNNING INDEPENDENTLY**
 ```
 docker-compose exec wca_on_rails bash -c "RAILS_ENV=test bin/rake db:reset && RAILS_ENV=test bin/rake assets:precompile && bin/rspec"
 ```
+
+### COMMON ISSUES WITH TESTING
+
+#### 1. `id not found: 333`, full error output as follows: 
+```
+An error occurred while loading ./spec/models/light_result_spec.rb.
+Failure/Error: self.c_find(id) || raise("id not found: #{id}")
+
+RuntimeError:
+  id not found: 333
+```
+
+Run `RAILS_ENV=test bin/rake db:reset` in your docker container - the error indicates an improperly populated database, which this command will resolve.
+
 
 ----
 
