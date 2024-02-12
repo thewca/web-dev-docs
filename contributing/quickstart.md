@@ -6,7 +6,7 @@ nav_order: 1
 ---
 
 {: .info}
-> This assumes you are an experienced developer with the necessary dependencies - refer to [Detailed Setup Guide](./detailed_setup_guide) if you need more information.
+> This assumes you are an experienced developer with the necessary dependencies - refer to [Detailed Contributing Guide](./detailed_contributing_guide) if you need more information.
 
 There are 3 steps to run the WCA website locally with docker[^1]:
 
@@ -24,16 +24,43 @@ There are two options here - a "test" database with generated data, or the produ
 ## (3) RUNNING TESTS
 Two options - running while your docker server is running, or running tests independently. 
 
+### **RUNNING WHILE SERVER IS LIVE**
+With your docker server running:
+1. Create `WcaOnRails/.env.test.local` with the following contents (this overrides `.env.test`, which is set up for testing in Github Actions, which uses a different db configuration): 
+    ```bash
+    DATABASE_HOST=127.0.0.1
+    DATABASE_PASSWORD=
+    ```
+1. Connect to the `rails` container using `docker exec -it rails bash`
+2. You'll now be in the terminal shell - run `RAILS_ENV=test rspec` 
+
+You may want to consider the following options to make the test suite run faster: 
+- Use `spring` to preload Rails with `bin/spring` - this all test runs after the first significantly faster
+- Set `SKIP_PRETEST_SETUP=true` in `.env.test.local` (you may need to create this file)
+    - This will skip database pre-population with seed data, which is used by legacy tests and is not needed if you are running an isolated set of tests which only rely on factories. WE SHOULD NOT BE WRITING ANY NEW TESTS WHICH USE THE SEED DATA! Use factories instead.
+- Add `--fail-fast` to have the suit terminate after the first failure
+- Specify a folder/filename to limit how many tests get executed
+
+A full command using these options would look like: `RAILS_ENV=test bin/spring rspec spec/features/register_for_competition_spec.rb --fail-fast`
+
 ### **RUNNING INDEPENDENTLY**
 ```
 docker-compose exec wca_on_rails bash -c "RAILS_ENV=test bin/rake db:reset && RAILS_ENV=test bin/rake assets:precompile && bin/rspec"
 ```
 
-### **RUNNING WHILE SERVER IS LIVE**
-With your docker server running:
-1. Connect to the `wca_on_rails` container using `docker exec -it {container_id} bash`
-    1. _Use `docker ps` to list containers and their id's_
-2. Run `bin/rspec` from inside the container's terminal
+### COMMON ISSUES WITH TESTING
+
+#### 1. `id not found: 333`, full error output as follows: 
+```
+An error occurred while loading ./spec/models/light_result_spec.rb.
+Failure/Error: self.c_find(id) || raise("id not found: #{id}")
+
+RuntimeError:
+  id not found: 333
+```
+
+Run `RAILS_ENV=test bin/rake db:reset` in your docker container - the error indicates an improperly populated database, which this command will resolve.
+
 
 ----
 

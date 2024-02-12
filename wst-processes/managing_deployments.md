@@ -62,7 +62,6 @@ You can establish the connection in the same way, just use the staging service i
 aws ecs execute-command --cluster wca-on-rails --task $(aws ecs list-tasks --cluster wca-on-rails --service-name wca-on-rails-staging --query 'taskArns[*]' --output text | awk -F/ '{print $NF}') --container rails-staging --interactive --command "/bin/bash"
 ```
 
-
 ## Checking the state of the app
 
 We use health checks that automatically restart the server when it can't serve requests for a couple minutes.
@@ -149,3 +148,19 @@ There are several log files you may look into:
 
 * New Relic
 * Cloudwatch
+
+# Staging
+
+We have another server with production-like setup, but used only for testing.
+You can establish through by connecting to the staging instance listed in our EC2 instances.
+
+## Updating the Staging Database
+
+This is done using a similar process to getting the developer database for local development. 
+
+1. Connect to the staging server
+2. Make sure you're the `cubing` user: `sudo su cubing` 
+3. Switch to the WcaOnRails folder: `cd worldcubeassociation/WcaOnRails`
+4. Load the developer database: `RAILS_ENV=production bin/rake db:load:development`
+    1. NOTE: This takes a very long time (~60 minutes) to execute.
+5. Run a database migration: `RAILS_ENV=production bin/rake db:migrate`
