@@ -7,6 +7,9 @@ layout: default
 {: .help}
 > There is much more information about our infrastructure that still needs to be added
 
+# Containerized Services
+WCA Services are containerized using Docker containers. You can find more about the Setup (here)[./infrastructure/containers.md]
+
 # Caching and Database Optimizations
 
 This is a list of things we are currently caching or using the Read replica for instead of using the primary database:
