@@ -39,7 +39,7 @@ The "developer database export" confusingly enough, is **also** publicly accessi
 
 ### Are you investigating bugs in the developer export?
 
-See [lib/database_dumper.rb](https://github.com/thewca/worldcubeassociation.org/blob/master/WcaOnRails/lib/database_dumper.rb) and the [relevant test](https://github.com/thewca/worldcubeassociation.org/blob/master/WcaOnRails/spec/lib/database_dumper_spec.rb) and the [corresponding rake file](https://github.com/thewca/worldcubeassociation.org/blob/master/WcaOnRails/lib/tasks/db.rake).
+See [lib/database_dumper.rb](https://github.com/thewca/worldcubeassociation.org/blob/main/lib/database_dumper.rb) and the [relevant test](https://github.com/thewca/worldcubeassociation.org/blob/master/WcaOnRails/spec/lib/database_dumper_spec.rb) and the [corresponding rake file](https://github.com/thewca/worldcubeassociation.org/blob/master/WcaOnRails/lib/tasks/db.rake).
 
 There are two commands to deal with the developer database export:
 
