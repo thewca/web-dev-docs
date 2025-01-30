@@ -37,9 +37,13 @@ The "results export" is used by tons of software, and is great if you want to ru
 
 The "developer database export" confusingly enough, is **also** publicly accessible. It is a production database dump with sensitive data (birthdays, emails, etc) removed. The schema should match [exactly what's in master's `structure.sql`](https://github.com/thewca/worldcubeassociation.org/blob/master/WcaOnRails/db/structure.sql), so naturally, its schema changes with every database migration. This dump is used by WCA Software Team members for website development purposes, and third party developers who want to do interesting data analyses not possible with the public database export (for an example, see Jonatan Klosko's awesome [wca_statistics](https://github.com/jonatanklosko/wca_statistics) project).
 
+### Running the exports
+
+The Admin Panel page "[Generate Data Exports](https://www.worldcubeassociation.org/panel-page/generate-data-exports)" gives a UI for running these exports without needing to execute commands on the server. 
+
 ### Are you investigating bugs in the developer export?
 
-See [lib/database_dumper.rb](https://github.com/thewca/worldcubeassociation.org/blob/main/lib/database_dumper.rb) and the [relevant test](https://github.com/thewca/worldcubeassociation.org/blob/master/WcaOnRails/spec/lib/database_dumper_spec.rb) and the [corresponding rake file](https://github.com/thewca/worldcubeassociation.org/blob/master/WcaOnRails/lib/tasks/db.rake).
+See [lib/database_dumper.rb](https://github.com/thewca/worldcubeassociation.org/blob/main/lib/database_dumper.rb) and the [relevant test](https://github.com/thewca/worldcubeassociation.org/blob/main/spec/lib/database_dumper_spec.rb) and the [corresponding rake file](https://github.com/thewca/worldcubeassociation.org/blob/master/WcaOnRails/lib/tasks/db.rake).
 
 There are two commands to deal with the developer database export:
 
