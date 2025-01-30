@@ -174,7 +174,7 @@ Here are the descriptions of the field:
 1. The name of your translation, anything really
 2. The base locale code, in our case it will always be "en".
 3. The locale code for the language you're translating (see [here](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes), the "639-1" column). It may be completed if your language is based on another one (eg: "pt" is used for Portuguese, "pt-BR" is used for Brazilian Portuguese).
-4. The url of the file you're translating, in our case we use "https://raw.githubusercontent.com/thewca/worldcubeassociation.org/master/WcaOnRails/config/locales/en.yml" as it will always point to the most up-to-date version of the English locale.
+4. The url of the file you're translating, in our case we use "https://raw.githubusercontent.com/thewca/worldcubeassociation.org/main/config/locales/en.yml" as it will always point to the most up-to-date version of the English locale.
 5. The url of the locale file in the target language. If your language doesn't exist yet on the website **leave it empty**! If you're updating an existing translation, you can import the work done until now by specifying the locale url (change "en" by your locale code in the link used for 4).
 6. If the generated file should contain include hashes of the original keys. **Keep it checked!** It will enable the website to display accurate information about the translation status in the [translations status](https://www.worldcubeassociation.org/translations/status) page :)
 
@@ -256,7 +256,7 @@ Some of the content is provided by external modules (such as some error messages
 If you don't plan on opening a PR, please skip the next information and we'll be happy to do this for you!
 
 Here is where you can get the additional modules' translation:
- - `time_will_tell`: it's the component used to display date ranges, such as on the competitions index page. There is no locale available, so if you want to translate these too, you need to take [this](https://github.com/thewca/worldcubeassociation.org/blob/master/WcaOnRails/config/locales/time_will_tell.en.yml) file, translate it, and include the translation in your PR.
+ - `time_will_tell`: it's the component used to display date ranges, such as on the competitions index page. There is no locale available, so if you want to translate these too, you need to take [this](https://github.com/thewca/worldcubeassociation.org/blob/main/config/locales/time_will_tell.en.yml) file, translate it, and include the translation in your PR.
  - `carrierwave`: it's the tool used to update profile pictures. There are plenty of locales already available [here](https://github.com/carrierwaveuploader/carrierwave-i18n/blob/3046d86ef580d449ea6ad70aab05db22276da01c/rails/locales). Pick the one for your language, edit the key names containing "whitelist" or "blacklist" to "white_list" or "black_list" (respectively), and include it in your PR.
  - `momentjs`: it's the component used to display a calendar when one has to fill in a date. Here again plenty of locales are available, so you just need to activate your language in [this](https://github.com/thewca/worldcubeassociation.org/blob/34d46d3f0ed022ec20a84d6d6241853f05495b71/WcaOnRails/app/assets/javascripts/application.js#L27-L28) file (just as I did with the French one).
 

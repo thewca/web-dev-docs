@@ -27,7 +27,14 @@ This is an essential step of contributing to the WCA website, as you'll want to 
 6. If you're using Visual Studio Code to develop, you can [attach it to the Docker container](https://code.visualstudio.com/docs/remote/containers) so that your extensions can take advantage of the Ruby environment and so the terminal runs from inside the container
 
 ### 3. Set up the database
-TODO
+
+#### Import the developer database
+1. Make sure that you have allocated at least 4GB RAM to your Docker containers under the Resources menu.
+2. In a bin/rails console prompt, run `bin/rake db:load:development`
+3. This job will take 10-200 minutes - yes, more than two hours in bad cases! This will load the latest database export onto your local machine.
+
+#### Run CAD 
+In a bin/rails console prompt, run `ComputeAuxiliaryData.perform_now`.
 
 ### 4. Run migrations (if necesary)
 
