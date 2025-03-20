@@ -28,6 +28,22 @@ The WCA website primarily uses Stripe for its payment processing, but WST is in 
 
 ## Stripe Implementation
 
+This is a very broad overview of how Stripe payments are initiated from the frontend - it is not an exhaustive explanation of our payments sytem. 
+
+- A Stripe `Element` component is imported from Stripe's React SDK - this is a context which stores the following data
+    - `stripe` which is essentially the authenticated API interface
+    - information relating to the amount to be charged (amount and currency) - this will be validated against the payment intent
+        - This payment information is populated by an amount returned from the `payment_denomination` endpoint - which takes an amount and currency, and returns a Stripe-API compatible amount/currency code
+- When the user clicks "Pay now", the following actions take place
+    - `payment_ticket` on our backend is called, with parameters which include the donation amount
+    - `payment_ticket` adds the given donation amount to the currency code and base registration fee (queried from the `competition` object in our database - ie, not passed by the frontend) and creates a `payment_intent` object in our code
+    - Upon being created, our `payment_intent` creates a `PaymentIntent` on Stripe's server
+    - Stripe returns a `clientSecret` upon the creation of a payment intent in its server
+        - This clientSecret will allow our frontend to securely reference the payment intent via Stripe's React SDK
+    - `payment_ticket` returns the `clientSecret` to the frontend
+- Upon receiving the `clientSecret` from the `payment_ticket` endpoint, the frontend initiates the payment using Stripe's React SDK
+- We will receive a notification (via webhook or, more likely, the return_url) of the payment's status once it reaches a terminal state (failure, success, etc)
+
 ## Paypal Implementation
 
 _Paypal is currently in a proof-of-concept phase in its implementation - the following reflects expedient design rather than good design, and there is room for improvement._
