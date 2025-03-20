@@ -120,3 +120,34 @@ For example, `3.2.1` --> `4.0.0` (first digit)
 You should skim the changelog for any breaking changes that could be relevant.
 If it's a crucial part of our infrastructure (see above), get a second pair of eyes to review.
 
+# Removing Duplicate Motions
+
+Motions are stored in an S3 bucket: 
+
+Currently, motions are not deleted when a new set is deployed. We have to delete them manually, and clear the cache key.
+1. Delete the old file 
+    1. Navigate to: https://us-west-2.console.aws.amazon.com/s3/buckets/wca-documents?region=us-west-2&bucketType=general&prefix=documents%2Fmotions%2F&showversions=false&tab=objects
+    1. Select the file and select delete
+    1. Confirm that you are targeting the correct file, and enter "permanently delete"
+1. Clear the cache
+    1. Connect to the production instance
+    1. Enter the rails console with `bin/rails console`
+    1. Find the cache key for the documents list with the following code:
+    ```ruby
+    Rails.cache.redis.with do |redis|
+      cursor = "0"
+      keys = []
+      loop do
+        cursor, batch = redis.scan(cursor)
+        keys.concat(batch.select { |key| key.include?("documents") })
+        break if cursor == "0"
+      end
+      keys
+    end
+    ```
+    1. Optionally, run `rails.cache.read(cache_key_from_previous_command)` to confirm you are targeting the correct key
+    1. Run `rails.cache.delete(cache_key_from_previous_command)`
+
+## How are motions deployed? 
+
+

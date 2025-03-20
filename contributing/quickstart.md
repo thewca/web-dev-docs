@@ -19,7 +19,7 @@ Now the website will run locally. You have some options on how to set up the dat
 ## (2) DATABASE SETUP
 There are two options here - a "test" database with generated data, or the production database (with sensitive information removed).
 1. **Test database**: Quick to set up, but may not mirror real-world data well. `docker exec -it rails bash -c "bin/rake db:reset"`
-2. **Exported database**: Takes 60-90 minutes to set up, but uses actual data from the live website. `docker exec -it rails bash -c "bin/rake db:load:development"`
+2. **Exported database**: Takes 60-90 minutes to set up, but uses actual data from the live website. `docker exec -it rails bash -c "bin/rake db:load:development[reload]"`
 
 ## (3) RUNNING TESTS
 Two options - running while your docker server is running, or running tests independently. 

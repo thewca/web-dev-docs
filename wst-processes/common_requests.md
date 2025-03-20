@@ -34,3 +34,9 @@ AWS will send an email with the title "Action Required - Your certificate renewa
 3. Click on the certificate with the relevant name in the "Domain name" column
 4. Click "Create records in Route 53"
 5. Confirm with "Create records"
+
+# Resetting a Password
+
+We never reset a password on someone's behalf - they should use the built-in password change feature.
+
+# Transferring an Account
