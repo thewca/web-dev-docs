@@ -16,7 +16,7 @@ A v1 API is on our pipeline, but should only be expected by Q2 of 2024 at the ea
 
 # Writing to the API
 
-For now, if you want to figure out what our API does, we recommend looking at the source code (see [here](https://github.com/thewca/worldcubeassociation.org/blob/master/WcaOnRails/config/routes.rb), search for "namespace :api" at the bottom) or the emails content.
+For now, if you want to figure out what our API does, we recommend looking at the source code (see [here](https://github.com/thewca/worldcubeassociation.org/blob/main/config/routes.rb), search for "namespace :api" at the bottom) or the emails content.
 
 If you want to exchange data with the WCA website, you should understand [WCA Competition Interchange Format (WCIF)](https://drive.google.com/drive/folders/13h6RCmD-wnzTmKOFMJFgvY3M4GjZTuI4)
 
