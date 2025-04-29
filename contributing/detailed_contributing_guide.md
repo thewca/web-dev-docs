@@ -57,6 +57,21 @@ With the Docker container running, the website will automatically update with an
 
 # Opening A Pull Request
 
+Before opening a pull request, we strongly suggest commenting on the issue you would like to contribute to, or opening an issue to discuss your proposed change.
+
+This will help to make sure that you don't waste time/effort making changes without the necessary context of our codebase, or our development direction.
+
+We also strongly recommend smaller, more incremental changes than mega-PRs.
+
+When you're ready to open a PR, the process is straightforward:
+- Fork the repo and make the changes in a branch on your forked repo
+- [Open a pull request](https://github.com/thewca/worldcubeassociation.org/compare) against the main repo
+- In the description of your pull request, please
+    - Tag the open issue that your pull request addresses (if applicable)
+    - Give a brief description of the problem you're trying to solve and the approach you took
+- A maintainer should notice your pull request and run tests/provide feedback within 24-48 hours. If you do not hear from a maintainer in that period, may ping @dunkOnIT to make sure that we are aware of your PR
+- Depending on how busy WST is, what our development priorities are and how complex your PR is, it may take us a while to review it
+
 # Reviewing Someone's Pull Request
 
 # Pulling from / Pushing to Someone's Pull Request

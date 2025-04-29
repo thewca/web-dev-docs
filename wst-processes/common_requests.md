@@ -39,4 +39,10 @@ AWS will send an email with the title "Action Required - Your certificate renewa
 
 We never reset a password on someone's behalf - they should use the built-in password change feature.
 
-# Transferring an Account
+# Results Export/Developer Export has not run for a while
+
+1. check the `cronjob_statistics` database table for either `DumpDeveloperDatabase` or `DumpPublicResultsDatabase`
+2. Study the contents of the relevant db row - for example, `last_error_message` may help you understand why it didn't run. 
+3. For the job to run, it must have a `run_end` time - if you would like to rerun the job, you can
+    1. Manually set the `run_end` time in the database
+    1. Run the following command in the production console: `bin/rake db:dump:development` or `bin/rake db:dump:public_results`
