@@ -1,5 +1,5 @@
 ---
-title: Creating React Components
+title: Creating Competitions With Database Entries
 parent: Guides
 layout: default
 ---
