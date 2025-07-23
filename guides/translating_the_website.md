@@ -264,7 +264,30 @@ Here is where you can get the additional modules' translation:
 
 Just skip this part if you don't intend to mess with i18n internal in the website.
 
-### To activate a locale:
+### Adding a new language
+#### Adding verified translators
+
+Currently, this must be done with the Rails console. Find the i18n code for the relevant lanugage (in this example, we use Hindi: `hi`)
+- Add Group Metadata for the new translator UserGroup we'll create (and assign it to a variable so we can reference it in the next command): 
+```rails
+hindi = GroupsMetadataTranslators.create(locale: 'hi')
+```
+
+- Add the UserGroup itself
+```rails
+UserGroup.create(name: 'Hindi', group_type: 'translators', is_active: true, is_hidden: false, metadata: hindi)
+```
+
+Once this is done, you can add verified translators for the new language from the (Translators panel)[https://www.worldcubeassociation.org/panel/admin#translators]
+
+#### To activate a locale:
+
+New information:
+We only add a locale to the relevant files once we have a translation available for it from Internationalize- otherwise it becomes available in the public-facing locale selector.
+
+See (this PR)[https://github.com/thewca/worldcubeassociation.org/pull/10986/files] for a reference of adding a new translation
+
+Old information (elements may still be relevant): 
 - Add the locale with the language information to the available locales (in `WcaOnRails/config/locales/locales.rb`)
 - Activate the `fullCalendar`/`moment` locale in the `WcaOnRails/app/assets/javascripts/application.js` (look at the numerous examples)
 
@@ -272,7 +295,7 @@ You can check missing translations by running `i18n-tasks missing` in the `WcaOn
 
 5 translations are expected to be missing (those under 'datepicker' or 'timepicker') for every language but English.
 
-### Language codes vs region codes
+#### Language codes vs region codes
 
 In most cases, language code and region code will be the same. However, it is important to know that these two different types of code exist. Most places in our codebase will only reference the language code, but in some places (eg `locales.rb`) both will appear:
 
