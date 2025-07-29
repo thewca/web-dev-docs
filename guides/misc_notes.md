@@ -1,5 +1,5 @@
 ---
-title: Creating Competitions With Database Entries
+title: Miscellaneous Notes
 parent: Guides
 layout: default
 ---
