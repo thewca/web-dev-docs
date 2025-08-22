@@ -50,9 +50,10 @@ Known open source projects using WCA OAuth:
 - [speedcubingfrance.org](https://speedcubingfrance.org/) - GitHub: [speedcubingfrance/speedcubingfrance.org](https://github.com/speedcubingfrance/speedcubingfrance.org)
 - [Scrambles Matcher](https://viroulep.github.io/scrambles-matcher/) - GitHub: [viroulep/scrambles-matcher](https://github.com/viroulep/scrambles-matcher)
 - [WCA Live](https://live.worldcubeassociation.org) - GitHub: [thewca/wca-live](https://github.com/thewca/wca-live)
-- [Delegate Dashboard](https://delegate-dashboard.netlify.app/) - GitHub: [coder13/delegateDashboard](https://coder13/delegateDashboard)
-- [Groupifier](https://groupifier.jonatanklosko.com/) - GitHub: [jonatanklosko/groupifier](https://jonatanklosko/groupifier)
+- [Delegate Dashboard](https://delegate-dashboard.netlify.app/) - GitHub: [coder13/delegateDashboard](https://github.com/coder13/delegateDashboard)
+- [Groupifier](https://groupifier.jonatanklosko.com/) - GitHub: [jonatanklosko/groupifier](https://github.com/jonatanklosko/groupifier)
 - [Badgifier](https://dallasmcneil.com/projects/badgifier/) 
+- [Speedcubing Slovakia](https://speedcubingslovakia.sk) - Github: [jakubdrobny/speedcubingslovakia](https://github.com/jakubdrobny/speedcubingslovakia)
 
 ## Staging OAuth Application 
 
