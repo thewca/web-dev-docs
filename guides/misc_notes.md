@@ -1,5 +1,5 @@
 ---
-title: Creating React Components
+title: Miscellaneous Notes
 parent: Guides
 layout: default
 ---
