@@ -81,5 +81,26 @@ When you're ready to open a PR, the process is straightforward:
 
 The "pushing" command allows you to push changes to someone's repo without adding them as REMOTE on your local git. 
 
-{: .help}
-> Add instructions for pushing to a repo by adding it as remote and then pushing to it
+### Adding a Contributor's Fork as a Remote
+
+If you're going to collaborate more extensively on another contributor's PR, it may be easier to add their fork as a remote on your local git.
+
+1. Add their fork as a remote (pick a short name you'll recognize, like their username):
+   ```bash
+   git remote add {contributor-username} git@github.com:{author-username}/worldcubeassociation.org.git
+   ```
+
+2. Fetch branches from that remote:
+   ```bash
+   git fetch {contributor-username}
+   ```
+
+3. Check out their branch locally:
+   ```bash
+   git checkout -b {branch-name} {contributor-username}/{branch-name}
+   ```
+
+4. Push your changes back to their branch:
+   ```bash
+   git push {contributor-username} HEAD:{branch-name}
+   ```
