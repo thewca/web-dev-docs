@@ -4,13 +4,27 @@ layout: default
 parent: Guides
 ---
 
-# TODO: add a note about how the website changes constantly, and translating the website is not a one time task, it's an ongoing commitment.
+
+## Useful Links
+- [Languages & Verified Translators](https://www.worldcubeassociation.org/translators)
+- [Translation Progress Dashboard](https://translate.worldcubeassociation.org/projects/wca/)
+- [WCA Translation Service](https://translate.worldcubeassociation.org/)
+
+## How do translations work? 
+
+- Only specific people (Verified Translators) can submit translations to the website
+- To become a Verified Translator (whether for an existing language, or to add a new one) you need to: 
+    - Email WST and your local/regional delegate asking WST to add you as a translator for your requested language. Your delegate will need to vouch for you being trusted to translate, so check with them before you send the email.
+- Being a translator is an ongoing job: As the website is updated, more translations come out. Verified Translators receive email notifications when there are new strings (words) to translate.
+- How much work is it to translate the website into a new language?
+    - There are ~20,000 words for the main website, although many of them are very simple and quick.
+    - There are ~20,000 words for the regulations. These translations are more difficult - they are made up of full, complex sentences.
+- Verified translators submit translations to the WCA via [Weblate](https://translate.worldcubeassociation.org/)
+
+The rest of this guide deals with how to use Weblate, as well as some notes for WST on how to manage translators.
 
 ## Table of Contents
 
-* [Existing translations](#existing-translations)
-* [WIP translations](#wip-translations)
-* [General notes](#general-notes)
 * [Dealing with special keys](#dealing-with-special-keys)
    * [Using variables](#using-variables)
    * [Using html](#using-html)
@@ -22,30 +36,39 @@ parent: Guides
 * [Bonus: Translating non WCA-specific parts of the application](#bonus-translating-non-wca-specific-parts-of-the-application)
 * [Bonus: Dev notes](#bonus-dev-notes)
 
-## Existing translations
-You can track the status of the existing translations on the [translations status](https://www.worldcubeassociation.org/translations/status) page.
+## Guide to using Weblate
 
-You can view the current verified translators [here](https://www.worldcubeassociation.org/translators)
+The WCA uses (Weblate)[https://translate.worldcubeassociation.org/] for managing its translations. Weblate has a lot of options, but the basic usage is very simple - in reality, you only need to worry about a few buttons[^1]. The basic process described below is all you need.
 
-## WIP Translations
+## Basic Setup
 
-There are no translations in progress at the moment.
+### Getting Your Language In Your Dashboard
+- Go to "Projects" -> "Manage Watched Projects" -> search for and select "WCA" in the Watched Projects section
+    - From this screen, you can also set up your notifications in the "Notification settings" section just below "Watched projects"
+- Go to "Languages" -> "Manage Translated Languages" -> search for and select your language
+    - You'll see that all the languages are available here - even though it _looks_ like you can select them, you will only be able to provide translations for the language(s) you are a Verified Translator for
 
-## General notes
+### Setting Up Email Notifications
+In case you didn't do in the previous section:   
+- Go to "Projects" -> "Manage Watched Projects" -> set up notifications in the "Notification Settings" section
 
-Although there are around 500 keys to translate, most of them are very simple and the overall number of actual words to translate is around 2500.
-Compared to the 10000+ words of the Regulations and Guidelines, it should be pretty easy to handle ;)
+## How To Translate
 
-You don't need knowledge about git, github, or anything about the website internals to be able to translate the website.
-However it will be easier for you if you are already familiar with the public pages of the WCA website!
+### Navigating To Your Language
+Now, you can see your translation options in the "Dashboard". You'll notice two options (called "projects"): 
+- WCA/Locales: These are the translations for the main WCA website.
+- WCA/Regulations: This is the regulations translation for your language.
 
-Everything is stored in one big file per language that is called a "locale file", it's equivalent to a dictionary.
-We have a dedicated application to help you with the translation process ("Internationalize", with a tutorial in the second part of this page), and basically you can just email the software team the resulting locale file after the translation, with your language name in your language.
+Choose one by clicking on the language name next to your preferred project - ie, for the title `WCA/Locales — Chinese (Simplified Han script)`, click on the `Chinese (Simplified Han script)` text.
 
-If you know how to submit a pull-request (PR), feel free to do so :)
-[Here](https://github.com/thewca/worldcubeassociation.org/pull/1105) is an example of such PR.
+### Submitting Translations
 
-If you have any questions or feedback about this, feel free to contact the software team!
+From your language's Translation page, click on "Translate". The usage here is straightforward:
+- Enter the translation for the base language (usually English) in the box with your language's label
+- Click "Save and Continue"
+- Keep going on the next translation
+
+If you want to simplify and speed up the translation process, you can use "Zen Mode" by hitting the "Zen" button in the top right of the screen. (In this mode, translations are saved automatically when you navigate away from the cell where you entered the project.)
 
 ## Dealing with special keys
 
@@ -100,8 +123,6 @@ Here is an example with the registrations opening message:
 will_open_html: "Registration will open in <strong>%{days}</strong> on %{time}."
 ```
 
-
-
 ### Dealing with pluralization
 
 The last tricky kind of keys is the one used to pluralize words.
@@ -127,89 +148,7 @@ days:
 
 In Jonatan's application such keys are detected and it will automatically enforce the correct set of keys to be used, based on the target language.
 
-
-## "Internationalize"
-
-"[Internationalize](https://internationalize.jonatanklosko.com/)" is a small application written by Jonatan to help through the translation of the website locale file.
-
-Here is a small tutorial/walk-through for the features you will most likely use.
-
-### Getting started
-
-Go on the [website](https://internationalize.jonatanklosko.com/) of the application and sign up there.
-
-When signed in, you should be able to create a new translation by clicking on "New translation":
-
-![new translation view](/assets/images/new_translation_view.png)
-
-Here are the descriptions of the field:
-
-1. The name of your translation, anything really
-2. The base locale code, in our case it will always be "en".
-3. The locale code for the language you're translating (see [here](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes), the "639-1" column). It may be completed if your language is based on another one (eg: "pt" is used for Portuguese, "pt-BR" is used for Brazilian Portuguese).
-4. The url of the file you're translating, in our case we use "https://raw.githubusercontent.com/thewca/worldcubeassociation.org/main/config/locales/en.yml" as it will always point to the most up-to-date version of the English locale.
-5. The url of the locale file in the target language. If your language doesn't exist yet on the website **leave it empty**! If you're updating an existing translation, you can import the work done until now by specifying the locale url (change "en" by your locale code in the link used for 4).
-6. If the generated file should contain include hashes of the original keys. **Keep it checked!** It will enable the website to display accurate information about the translation status in the [translations status](https://www.worldcubeassociation.org/translations/status) page :)
-
-Click create once, and you should see your newly created translation under "My Translations". Click on it to start the translation process.
-
-You should now be on the translate view:
-
-![translate view](/assets/images/translate_view.png)
-
-Some description:
-
-1. Status bar
-2. The current key hierarchy in the file, the last name is the name of the key!
-3. A message about the context in which the key is used on the website.
-4. The original English value.
-5. This is where you work and put the translation in ;)
-6. Click "save" to save the current translation and proceed to the next one.
-7. If you're unsure about how to translate the key or want to translate it later you can skip it.
-8. If you want to keep the English version (such as for "WCA ID" for example), please use this button and do **not** skip the key.
-
-Basically you can enter your translation and press "enter": it will have the same effect as the "save" button and keep the focus on the "translation" field. That way you can "translate, enter; translate, enter;..." and make the whole process very fast!
-
-If you want to change the translation for a key you already translated you can use the "Browse" view:
-
-![browse view](/assets/images/browse_view.png)
-
-For example the key hierarchy on the previous screen is "fr > countries > XA", so you can click on "countries" and find the "XA" key.
-
-When you're done translating (or at any time), you can download the resulting file through the menu:
-
-![menu view](/assets/images/menu_view.png)
-
-Then you just have to send it (with your language name in your language) to the software team and voilà!
-
-
-The website evolves rapidly, so you may want to keep the translation up to date regularly.
-The next subsection covers synchronization.
-
-### Synchronizing/Updating a remote locale
-
-The website has a [translations status](https://www.worldcubeassociation.org/translations/status) page, where you can find precise information about translations.
-It displays *missing* keys (that have been added after the last translation), as well as *outdated* keys (that have been changed in English since the last translation).
-
-To synchronize your translation with the English one, you can use the "Synchronize with the remote" feature, which is available in the menu displayed in the image above.
-
-Before actually doing the sync, you will be prompted with a summary of the changes, and asked to resolve any conflict that may arise.
-Conflicts happen when an existing key has been modified in the English locale, after you translated it.
-For example the event names changed recently, and this is what I had when synchronizing the French locale:
-
-![sync view](/assets/images/sync_view.png)
-
-If any key has been added, you need to go back to the translation process!
-
-After you're done with filling the missing parts, follow these steps:
-
-1. Copy the YAML file that the app generates. The most efficient way of doing this is clicking on the menu icon and selecting "Show raw", then you can just click "Copy to clipboard". No need for downloading a file.
-2. Go to this page: https://www.worldcubeassociation.org/translations/edit. Select your locale and paste the copied file content.
-3. Click the button.
-
-This automatically creates a Pull Request on GitHub, and after all necessary automatic checks passes, someone from the Software Team merges this and it comes live with the next deployment.
-
-### A note about pluralization
+## A note about pluralization
 
 As you will see by using the app, the keys used for the pluralization of a word or a sentence are enforced based on the target language.
 There is one specificity that is worth knowing: the key `zero` is always required!
@@ -221,6 +160,17 @@ This will lead to some confusing cases:
 In this particular case, it makes absolutely no sense to provide a `zero` key, since the message is never displayed if there is no registration.
 In such cases you can just copy the value of the `other` key.
 There is a bunch of them, sorry for this!
+
+
+## Tips and Tricks
+
+### Translation Aids
+- If you're uncertain about the context of a translation, use the "Nearby strings" menu to see other strings used in the same section of the website
+- You can also use "Similar keys" and "Other languages" in the Translate menu to help with translation wording
+- You can set a "Secondary Language" for yourself in "Languages" -> "Manage Translated Languages". This lets you see more translations in other languages which might help (for example, seeing both the English and European Spanish translations when doing a Latin American Spanish translation)
+
+### 
+
 
 ## Bonus: Translating non WCA-specific parts of the application
 
@@ -295,3 +245,7 @@ pt-BR:
 ```
 
 We compare the original hash associated to the key to the one computed with the current English text for the same key, if they don't match the translation is outdated.
+
+----
+
+[^1] If you're wondering why there are so many buttons - Weblate is not coded by the WCA. It is open-source software which we are just hosting our own version of - so we can't easily control what options you do/don't see.
