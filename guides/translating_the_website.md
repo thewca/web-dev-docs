@@ -25,7 +25,38 @@ parent: Guides
 ## Existing translations
 You can track the status of the existing translations on the [translations status](https://www.worldcubeassociation.org/translations/status) page.
 
-You can see all verified translators [here](https://www.worldcubeassociation.org/translators).
+| Language | Translator | GitHub Account |
+| -------- | ---------- | -------------- |
+| Catalan | Ivan Ros | @Roco033 |
+| Chinese-Simplified (zh-CN)| Baiqiang Dong, Lee Yiu Sing | @Baiqiang @PikAsriel |
+| Chinese-Traditional (zh-TW) | Rui-Jun Liu, Han Wu | @hanwu85 |
+| Croatian | Dominik Vidaković |
+| Czech | Kristýna Vaštová, Emma Beranová | @beranka |
+| Danish | Daniel Edgal |
+| Dutch | Ron van Bruchem, Heleen van der Ree |
+| Finnish | Timo Norrkniivilä |
+| French | Philippe Virouleau | @viroulep |
+| German | Laura Ohrndorf, Annika Stein | @Laura-O @AnnikaStein |
+| Hungarian | Niki Placskó |
+| Indonesian | Hafizh Dary Faridhan Hudoyo | @HafizhHD |
+| Italian | Simone Cantarelli | @SimoneCantarelli |
+| Japanese | Kotaro Terada, Yuki Tanaka | @kotarot @yktanaka |
+| Korean | Ilkyoo Choi |
+| Polish | Jonatan Kłosko | @jonatanklosko |
+| Portuguese-Brazilian | Pedro Santos Guimarães | @pedrosino |
+| Portuguese-European | António Gomes | @cubizh |
+| Romanian | Teodor Toma |
+| Russian | Oleg Gritsenko | @Claster |
+| Slovakian | Anton Mozola |
+| Slovenian | Jernej Omulec |
+| Spanish-European | Raúl Morales Hidalgo and Carlos Méndez García-Barroso | @moralsh and ? |
+| Swedish | Viktor Zenk | @viktorzenk |
+| Ukrainian | Roman Ostapenko | |
+| Vietnamese | Trung Vương Thiện | @trungams |
+
+## WIP Translations
+
+There are no translations in progress at the moment.
 
 ## General notes
 
