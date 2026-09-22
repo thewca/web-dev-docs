@@ -23,8 +23,22 @@ parent: Guides
 
 The rest of this guide deals with how to use Weblate, as well as some notes for WST on how to manage translators.
 
-## Table of Contents
+## Guide for Translators
 
+The WCA uses (Weblate)[https://translate.worldcubeassociation.org/] for managing its translations. This guide covers the basics of how to use Weblate, as well as some important information on translating special keys.
+
+* [Basic Weblate Setup](#basic-weblate-setup)
+   * [Getting Your Language In Your Dashboard](#getting-your-language-in-your-dashboard)
+   * [Setting Up Email Notifications](#setting-up-email-notifications)
+* [How To Translate](#how-to-translate)
+   * [Navigating To Your Language](#navigating-to-your-language)
+   * [Submitting Translations](#submitting0translations)
+   * [Dealing With Special Keys](#dealing-with-special-keys)
+       * [Using Variables](#using-variables)
+       * [Using HTML](#using-html)
+   * []()
+   * []()
+   * []()
 * [Dealing with special keys](#dealing-with-special-keys)
    * [Using variables](#using-variables)
    * [Using html](#using-html)
@@ -33,14 +47,12 @@ The rest of this guide deals with how to use Weblate, as well as some notes for 
    * [Getting started](#getting-started)
    * [Synchronizing/Updating a remote locale](#synchronizingupdating-a-remote-locale)
    * [A note about pluralization](#a-note-about-pluralization)
-* [Bonus: Translating non WCA-specific parts of the application](#bonus-translating-non-wca-specific-parts-of-the-application)
 * [Bonus: Dev notes](#bonus-dev-notes)
 
-## Guide to using Weblate
 
-The WCA uses (Weblate)[https://translate.worldcubeassociation.org/] for managing its translations. Weblate has a lot of options, but the basic usage is very simple - in reality, you only need to worry about a few buttons[^1]. The basic process described below is all you need.
+## Basic Weblate Setup
 
-## Basic Setup
+Weblate has a lot of options, but the basic usage is very simple - in reality, you only need to worry about a few buttons[^1]. The basic process described below is all you need.
 
 ### Getting Your Language In Your Dashboard
 - Go to "Projects" -> "Manage Watched Projects" -> search for and select "WCA" in the Watched Projects section
@@ -70,7 +82,7 @@ From your language's Translation page, click on "Translate". The usage here is s
 
 If you want to simplify and speed up the translation process, you can use "Zen Mode" by hitting the "Zen" button in the top right of the screen. (In this mode, translations are saved automatically when you navigate away from the cell where you entered the project.)
 
-## Dealing with special keys
+### Dealing With Special Keys
 
 Before you rush into the application to happily translate the locale file, here is some basic information about how translations work, **please read them carefuly**!
 
@@ -80,7 +92,7 @@ For example if we want to show the title of the Competitions index page, we use 
 Most of the keys need translation as simple as that, however some of them are slightly more complicated and are worth explaining.
 There are basically 3 things you need to be careful about, and they are described in the next 3 subsections.
 
-### Using variables
+#### Using Variables
 
 Sometimes translated strings contain variables. For example let's look at the waiting list message displayed when your registration at a competition is pending:
 
@@ -99,7 +111,7 @@ waiting_list: "Votre inscription est en attente, vous êtes en position %{i} sur
 
 As you can see, the variable names (`i` and `n`) stay the same: please **do not** change the variable names!
 
-### Using html
+#### Using HTML
 
 Sometimes translated strings will contain html (this is the language used to format text in your browser). It's usually used on a specific part of the sentence, so please keep the html on the same part of your translation.
 For example the hint about name given to a user when registering is the following:
@@ -123,7 +135,7 @@ Here is an example with the registrations opening message:
 will_open_html: "Registration will open in <strong>%{days}</strong> on %{time}."
 ```
 
-### Dealing with pluralization
+#### Dealing with pluralization
 
 The last tricky kind of keys is the one used to pluralize words.
 Pluralization rules depend entirely on the language, so the website has a flexible approach to handle it (and knows how to handle it for every language); lets take the example of the pluralization of "day(s)", which has the key `days`:
@@ -148,7 +160,7 @@ days:
 
 In Jonatan's application such keys are detected and it will automatically enforce the correct set of keys to be used, based on the target language.
 
-## A note about pluralization
+#### A note about pluralization
 
 As you will see by using the app, the keys used for the pluralization of a word or a sentence are enforced based on the target language.
 There is one specificity that is worth knowing: the key `zero` is always required!
@@ -169,26 +181,21 @@ There is a bunch of them, sorry for this!
 - You can also use "Similar keys" and "Other languages" in the Translate menu to help with translation wording
 - You can set a "Secondary Language" for yourself in "Languages" -> "Manage Translated Languages". This lets you see more translations in other languages which might help (for example, seeing both the English and European Spanish translations when doing a Latin American Spanish translation)
 
-### 
+## Software Overview
 
+This part is only relevant to developers/WST members.
 
-## Bonus: Translating non WCA-specific parts of the application
+### Adding A Verified Translator
 
-Some of the content is provided by external modules (such as some error messages, or the sign in/up system), most of these modules already have their own translation, so basically you shouldn't have anything to do here.
+**Note**: Please receive confirmation from delegates in the user's region, and existing Verified Translators for the language, before adding someone as a Verified Translator.
 
-If you don't plan on opening a PR, please skip the next information and we'll be happy to do this for you!
+Verified Translators can be added to a language from the (Translators panel)[https://www.worldcubeassociation.org/panel/admin#translators]
 
-Here is where you can get the additional modules' translation:
- - `time_will_tell`: it's the component used to display date ranges, such as on the competitions index page. There is no locale available, so if you want to translate these too, you need to take [this](https://github.com/thewca/worldcubeassociation.org/blob/main/config/locales/time_will_tell.en.yml) file, translate it, and include the translation in your PR.
- - `carrierwave`: it's the tool used to update profile pictures. There are plenty of locales already available [here](https://github.com/carrierwaveuploader/carrierwave-i18n/blob/3046d86ef580d449ea6ad70aab05db22276da01c/rails/locales). Pick the one for your language, edit the key names containing "whitelist" or "blacklist" to "white_list" or "black_list" (respectively), and include it in your PR.
- - `momentjs`: it's the component used to display a calendar when one has to fill in a date. Here again plenty of locales are available, so you just need to activate your language in [this](https://github.com/thewca/worldcubeassociation.org/blob/34d46d3f0ed022ec20a84d6d6241853f05495b71/WcaOnRails/app/assets/javascripts/application.js#L27-L28) file (just as I did with the French one).
-
-## Bonus: Dev notes
-
-Just skip this part if you don't intend to mess with i18n internal in the website.
+Nothing needs to be done in Weblate to grant translation permissions there - Weblate pulls its permissions from the WCA website when the user logs in to Weblate via OAuth.
 
 ### Adding a new language
-#### Adding verified translators
+
+#### First, create a translator group for the language.
 
 Currently, this must be done with the Rails console. Find the i18n code for the relevant lanugage (in this example, we use Hindi: `hi`)
 - Add Group Metadata for the new translator UserGroup we'll create (and assign it to a variable so we can reference it in the next command): 
@@ -206,7 +213,7 @@ Once this is done, you can add verified translators for the new language from th
 #### To activate a locale:
 
 New information:
-We only add a locale to the relevant files once we have a translation available for it from Internationalize- otherwise it becomes available in the public-facing locale selector.
+We only add a locale to the relevant files once we have a translation available for it from Weblate - otherwise it becomes available in the public-facing locale selector.
 
 See (this PR)[https://github.com/thewca/worldcubeassociation.org/pull/10986/files] for a reference of adding a new translation
 
@@ -215,8 +222,7 @@ Old information (elements may still be relevant):
 - Activate the `fullCalendar`/`moment` locale in the `WcaOnRails/app/assets/javascripts/application.js` (look at the numerous examples)
 
 You can check missing translations by running `i18n-tasks missing` in the `WcaOnRails` directory.
-
-5 translations are expected to be missing (those under 'datepicker' or 'timepicker') for every language but English.
+- Note: 5 translations are expected to be missing (those under 'datepicker' or 'timepicker') for every language but English.
 
 #### Language codes vs region codes
 
@@ -230,21 +236,6 @@ en: {
 ```
 
 In this case, `en` is the _language_ code, while `flag_id` is _region_ code, which may have a different ISO code - as is the example with English (the language), where the Great Britain flag is used to represent it. (This is a good illustration of why using flags to represent languages is not generally not a good idea.)
-
-### Translations status internals
-
-We display the status of each translation on the [translations status](https://www.worldcubeassociation.org/translations/status) page.
-We determine if translations are outdated by looking at the hash of the original value attached to them; the Internationalize app adds an "original_hash" comment, containing the first 7 chars of the sha1 sum of the original value:
-```yaml
-pt-BR:
-  countries:
-    #original_hash: 3f8c9de
-    XA: Múltiplos Países (Ásia)
-    #original_hash: 090f3ce
-    XE: Múltiplos Países (Europa)
-```
-
-We compare the original hash associated to the key to the one computed with the current English text for the same key, if they don't match the translation is outdated.
 
 ----
 
