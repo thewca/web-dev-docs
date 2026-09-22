@@ -25,7 +25,7 @@ The rest of this guide deals with how to use Weblate, as well as some notes for 
 
 ## Guide for Translators
 
-The WCA uses (Weblate)[https://translate.worldcubeassociation.org/] for managing its translations. This guide covers the basics of how to use Weblate, as well as some important information on translating special keys.
+The WCA uses [Weblate](https://translate.worldcubeassociation.org/) for managing its translations. This guide covers the basics of how to use Weblate, as well as some important information on translating special keys.
 
 * [Basic Weblate Setup](#basic-weblate-setup)
    * [Getting Your Language In Your Dashboard](#getting-your-language-in-your-dashboard)
