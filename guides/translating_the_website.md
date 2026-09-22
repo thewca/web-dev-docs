@@ -230,4 +230,4 @@ In this case, `en` is the _language_ code, while `flag_id` is _region_ code, whi
 
 ----
 
-[^1] If you're wondering why there are so many buttons - Weblate is not coded by the WCA. It is open-source software which we are just hosting our own version of - so we can't easily control what options you do/don't see.
+[^1]: If you're wondering why there are so many buttons - Weblate is not coded by the WCA. It is open-source software which we are just hosting our own version of - so we can't easily control what options you do/don't see.
