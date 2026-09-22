@@ -36,18 +36,9 @@ The WCA uses [Weblate](https://translate.worldcubeassociation.org/) for managing
    * [Dealing With Special Keys](#dealing-with-special-keys)
        * [Using Variables](#using-variables)
        * [Using HTML](#using-html)
-   * []()
-   * []()
-   * []()
-* [Dealing with special keys](#dealing-with-special-keys)
-   * [Using variables](#using-variables)
-   * [Using html](#using-html)
-   * [Dealing with pluralization](#dealing-with-pluralization)
-* [The "Internationalize" application](#internationalize)
-   * [Getting started](#getting-started)
-   * [Synchronizing/Updating a remote locale](#synchronizingupdating-a-remote-locale)
-   * [A note about pluralization](#a-note-about-pluralization)
-* [Bonus: Dev notes](#bonus-dev-notes)
+       * [Dealing With Pluralization](#dealing-with-pluralization)
+* [Tips and Tricks](#tips-and-tricks)
+* [Software Overview](#software-overview)
 
 
 ## Basic Weblate Setup
