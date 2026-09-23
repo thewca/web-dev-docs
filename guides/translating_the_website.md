@@ -52,7 +52,7 @@ Weblate has a lot of options, but the basic usage is very simple - in reality, y
     - You'll see that all the languages are available here - even though it _looks_ like you can select them, you will only be able to provide translations for the language(s) you are a Verified Translator for
 
 ### Setting Up Email Notifications
-In case you didn't do in the previous section:   
+In case you didn't do this in the previous section:   
 - Go to "Projects" -> "Manage Watched Projects" -> set up notifications in the "Notification Settings" section
 
 ## How To Translate
@@ -150,20 +150,6 @@ days:
 (we don't pluralize "word" if there is no "word")
 
 In Jonatan's application such keys are detected and it will automatically enforce the correct set of keys to be used, based on the target language.
-
-#### A note about pluralization
-
-As you will see by using the app, the keys used for the pluralization of a word or a sentence are enforced based on the target language.
-There is one specificity that is worth knowing: the key `zero` is always required!
-In some case it's nicer to be able to override the default value with a nicer "zero" case, eg use "no objects" instead of "0 objects". This is an optional key in the website framework, however we made it required in the app, because it was way easier for us.
-This will lead to some confusing cases:
-
-![plural view](/assets/images/plural_view.png)
-
-In this particular case, it makes absolutely no sense to provide a `zero` key, since the message is never displayed if there is no registration.
-In such cases you can just copy the value of the `other` key.
-There is a bunch of them, sorry for this!
-
 
 ## Tips and Tricks
 
