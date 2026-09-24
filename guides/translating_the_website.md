@@ -70,22 +70,38 @@ Weblate has a lot of options, but the basic usage is very simple - in reality, y
 ## How To Translate
 
 ### Navigating To Your Language
-Now, you can see your translation options in the "Dashboard". You'll notice two options (called "projects"): 
+Now, you can see your translation options in the "Dashboard". You'll notice three options (called "projects"): 
 - WCA/Locales: These are the translations for the main WCA website.
 - WCA/Regulations: This is the regulations translation for your language.
+- WCA/Time Will Tell: This can be safely ignored.
 
-Choose one by clicking on the language name next to your preferred project - ie, for the title `WCA/Locales — Chinese (Simplified Han script)`, click on the `Chinese (Simplified Han script)` text.
+Choose one by clicking on the language name next to your preferred project - ie, for the title `WCA/Locales — Swahili`, click on the `Swahili` text.
+
+![Select WCA/Locales Swahili](/assets/images/translations/enter_translation.png)
 
 ### Submitting Translations
 
-From your language's Translation page, click on "Translate". The usage here is straightforward:
+From your language's Translation page, click on "Translate".
+
+[SCREENSHOT NEEDED!]
+
+The usage here is straightforward:
 - Enter the translation for the base language (usually English) in the box with your language's label
 - Click "Save and Continue"
 - Keep going on the next translation
+- If you don't want to do a translation now, you can click "Skip"
+- If you aren't sure, you could "Suggest" a translation and other translators for your language can take a look at it 
+
+![Translate Menu](/assets/images/translations/translate_menu.png)
+
+
 
 ### Tips and Tricks
 
 - If you want to simplify and speed up the translation process, you can use "Zen Mode" by hitting the "Zen" button in the top right of the screen. (In this mode, translations are saved automatically when you navigate away from the cell where you entered the project.)
+![Zen Mode Button](/assets/images/translations/zen_mode_button.png)
+![Zen Mode Menu](/assets/images/translations/zen_mode.png)
+
 - If you're uncertain about the context of a translation, use the "Nearby strings" menu to see other strings used in the same section of the website
 - You can also use "Similar keys" and "Other languages" in the Translate menu to help with translation wording
 
