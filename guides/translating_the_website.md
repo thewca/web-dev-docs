@@ -45,18 +45,27 @@ The WCA uses [Weblate](https://translate.worldcubeassociation.org/) for managing
 
 Weblate has a lot of options, but the basic usage is very simple - in reality, you only need to worry about a few buttons[^1]. The basic process described below is all you need.
 
-### Getting Your Language In Your Dashboard
-- Go to "Projects" -> "Manage Watched Projects" -> search for and select "WCA" in the Watched Projects section
+### Setting Up Language Dashboard & Email Notifications
+- Go to "Projects" -> "Manage Watched Projects" 
 ![Watched projects](/assets/images/translations/watched_projects.png)
 
-- From this screen, you can also set up your notifications in the "Notification settings" section just below "Watched projects"
+- Search for and select "WCA" in the Watched Projects section, then click "Save"
+![Selecting WCA project](/assets/images/translations/wca_project.png)
+
+- Go to the "Notification settings" section just below where you selected "WCA" as your project. Make sure "Watched projects" is selected
+![Email notification settings](/assets/images/translations/notifications_1.png)
+
+- The only notification WST recommends is "Instant notification" for "String is available for translation" under the "Translation notifications" heading. However, you may set up your notifications however you want.
+![String available for translation](/assets/images/translations/notifications_2.png)
 
 - Go to "Languages" -> "Manage Translated Languages" -> search for and select your language
-    - You'll see that all the languages are available here - even though it _looks_ like you can select them, you will only be able to provide translations for the language(s) you are a Verified Translator for
+![Manage languages menu](/assets/images/translations/manage_languages.png)
 
-### Setting Up Email Notifications
-In case you didn't do this in the previous section:   
-- Go to "Projects" -> "Manage Watched Projects" -> set up notifications in the "Notification Settings" section
+- You'll see that all the languages are available here - even though it _looks_ like you can select them, you will only be able to provide translations for the language(s) you are a Verified Translator for
+    - You can change your "Interface Language" if you want to use Weblate in a language of your choice
+    - You can also select a "Secondary language". This lets you see more translations in other languages which might help (for example, seeing both the English and European Spanish translations when doing a Latin American Spanish translation)
+![Language selection menu](/assets/images/translations/select_language.png)
+
 
 ## How To Translate
 
@@ -74,7 +83,11 @@ From your language's Translation page, click on "Translate". The usage here is s
 - Click "Save and Continue"
 - Keep going on the next translation
 
-If you want to simplify and speed up the translation process, you can use "Zen Mode" by hitting the "Zen" button in the top right of the screen. (In this mode, translations are saved automatically when you navigate away from the cell where you entered the project.)
+### Tips and Tricks
+
+- If you want to simplify and speed up the translation process, you can use "Zen Mode" by hitting the "Zen" button in the top right of the screen. (In this mode, translations are saved automatically when you navigate away from the cell where you entered the project.)
+- If you're uncertain about the context of a translation, use the "Nearby strings" menu to see other strings used in the same section of the website
+- You can also use "Similar keys" and "Other languages" in the Translate menu to help with translation wording
 
 ### Dealing With Special Keys
 
@@ -153,13 +166,6 @@ days:
 (we don't pluralize "word" if there is no "word")
 
 In Jonatan's application such keys are detected and it will automatically enforce the correct set of keys to be used, based on the target language.
-
-## Tips and Tricks
-
-### Translation Aids
-- If you're uncertain about the context of a translation, use the "Nearby strings" menu to see other strings used in the same section of the website
-- You can also use "Similar keys" and "Other languages" in the Translate menu to help with translation wording
-- You can set a "Secondary Language" for yourself in "Languages" -> "Manage Translated Languages". This lets you see more translations in other languages which might help (for example, seeing both the English and European Spanish translations when doing a Latin American Spanish translation)
 
 ## Software Overview
 
