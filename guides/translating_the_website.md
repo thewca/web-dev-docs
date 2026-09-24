@@ -47,7 +47,10 @@ Weblate has a lot of options, but the basic usage is very simple - in reality, y
 
 ### Getting Your Language In Your Dashboard
 - Go to "Projects" -> "Manage Watched Projects" -> search for and select "WCA" in the Watched Projects section
-    - From this screen, you can also set up your notifications in the "Notification settings" section just below "Watched projects"
+![Watched projects](/assets/images/translations/watched_projects.png)
+
+- From this screen, you can also set up your notifications in the "Notification settings" section just below "Watched projects"
+
 - Go to "Languages" -> "Manage Translated Languages" -> search for and select your language
     - You'll see that all the languages are available here - even though it _looks_ like you can select them, you will only be able to provide translations for the language(s) you are a Verified Translator for
 
