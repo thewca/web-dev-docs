@@ -83,7 +83,7 @@ Choose one by clicking on the language name next to your preferred project - ie,
 
 From your language's Translation page, click on "Translate".
 
-[SCREENSHOT NEEDED!]
+![Translate Button](/assets/images/translations/translate_button.png)
 
 The usage here is straightforward:
 - Enter the translation for the base language (usually English) in the box with your language's label
