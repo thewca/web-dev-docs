@@ -36,6 +36,7 @@ The WCA uses [Weblate](https://translate.worldcubeassociation.org/) for managing
        * [Using HTML](#using-html)
        * [Dealing With Pluralization](#dealing-with-pluralization)
 * [Tips and Tricks](#tips-and-tricks)
+* [Translating Similar Languages](#translating-similar-languages)
 * [Software Overview](#software-overview)
 
 ## Basic Weblate Setup
