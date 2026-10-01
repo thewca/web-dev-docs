@@ -28,11 +28,9 @@ The rest of this guide deals with how to use Weblate, as well as some notes for 
 The WCA uses [Weblate](https://translate.worldcubeassociation.org/) for managing its translations. This guide covers the basics of how to use Weblate, as well as some important information on translating special keys.
 
 * [Basic Weblate Setup](#basic-weblate-setup)
-   * [Getting Your Language In Your Dashboard](#getting-your-language-in-your-dashboard)
-   * [Setting Up Email Notifications](#setting-up-email-notifications)
 * [How To Translate](#how-to-translate)
    * [Navigating To Your Language](#navigating-to-your-language)
-   * [Submitting Translations](#submitting0translations)
+   * [Submitting Translations](#submitting-translations)
    * [Dealing With Special Keys](#dealing-with-special-keys)
        * [Using Variables](#using-variables)
        * [Using HTML](#using-html)
@@ -40,12 +38,10 @@ The WCA uses [Weblate](https://translate.worldcubeassociation.org/) for managing
 * [Tips and Tricks](#tips-and-tricks)
 * [Software Overview](#software-overview)
 
-
 ## Basic Weblate Setup
 
 Weblate has a lot of options, but the basic usage is very simple - in reality, you only need to worry about a few buttons[^1]. The basic process described below is all you need.
 
-### Setting Up Language Dashboard & Email Notifications
 - Go to "Projects" -> "Manage Watched Projects" 
 ![Watched projects](/assets/images/translations/watched_projects.png)
 
@@ -95,7 +91,6 @@ The usage here is straightforward:
 ![Translate Menu](/assets/images/translations/translate_menu.png)
 
 
-
 ### Tips and Tricks
 
 - If you want to simplify and speed up the translation process, you can use "Zen Mode" by hitting the "Zen" button in the top right of the screen. (In this mode, translations are saved automatically when you navigate away from the cell where you entered the project.)
@@ -104,6 +99,16 @@ The usage here is straightforward:
 
 - If you're uncertain about the context of a translation, use the "Nearby strings" menu to see other strings used in the same section of the website
 - You can also use "Similar keys" and "Other languages" in the Translate menu to help with translation wording
+
+### Translating Similar Languages
+This applies if you are doing a translation for a language that already has a similar translation (eg, adding a French Canadian translation when French is already translated)
+
+We suggest the following approach: 
+- Follow steps in [Basic Weblate Setup](#basic-weblate-setup) to set your Secondary Language to the similar language (eg, French)
+- Use this button to copy the text from your Primary or Secondary language straight into the translation - this lets you move very fast through cases where words are the zoom
+![Clone Translation](/assets/images/translations/clone_translation.png)
+
+- The button is also available in Zen Mode if you want to move even faster
 
 ### Dealing With Special Keys
 
