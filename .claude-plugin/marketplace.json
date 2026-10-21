@@ -1,0 +1,14 @@
+{
+  "name": "wca-web-dev-docs",
+  "owner": {
+    "name": "WCA Software Team"
+  },
+  "description": "Claude Code plugins maintained alongside the WCA software documentation.",
+  "plugins": [
+    {
+      "name": "wca-style-guide",
+      "source": "./",
+      "description": "The WCA codebase style guide as a skill for coding agents."
+    }
+  ]
+}
