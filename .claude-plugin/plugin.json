@@ -1,0 +1,8 @@
+{
+  "name": "wca-style-guide",
+  "description": "The WCA codebase style guide as a skill for coding agents.",
+  "author": {
+    "name": "WCA Software Team"
+  },
+  "repository": "https://github.com/thewca/web-dev-docs"
+}

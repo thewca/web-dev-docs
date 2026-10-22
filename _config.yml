@@ -24,3 +24,6 @@ callouts:
   help:
     title: Help Wanted
     color: yellow
+
+exclude:
+  - skills/
